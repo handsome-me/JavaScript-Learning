@@ -48,4 +48,6 @@ Notably the setTimeout code will always have at least a 10ms delay
  of when the last callback was executed.
 
  Link- https://johnresig.com/blog/how-javascript-timers-work/
+
+ if their is x sec setInternal and it times up so its callback function gets push to Q so u cannot clearTimout() it after ward
 */
