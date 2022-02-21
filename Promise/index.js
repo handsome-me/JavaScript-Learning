@@ -1,27 +1,52 @@
+
 console.log("Started implementing promise");
+
+const PENDING="PENDING";
+const FULLFILLED="FULLFILLED";
+const REJECTED="REJECTED";
 
    class customPromise{
     
-     refer_to_then=null;
+      refer_to_then=null;
+       val=null;
+       status=PENDING;
 
      //promise(//promise_callback->// (res,rej)=>{})
      constructor(promise_callback){
-         setTimeout(()=>{
-          this.resolve(33);
-         },1000);
-        return this.obj;
+       
+        promise_callback(this.resolve);
+      
+        return this;
+
      }
-     resolve(val){
-       this.refer_to_then(val);
+     resolve=(val)=>{
+       this.status=FULLFILLED;
+       this.val=val;
+        
      };
      reject(){
 
      } 
-     obj={
-         then:(callBack)=>{
+     
+     then=(callBack)=>{
             
-            this.refer_to_then=callBack()
-         }
-     }
+          const res=callBack(this.val);
+          this.val=res;
+          this.status=FULLFILLED
+          
+          return this;
 
-   }
+        }
+   
+    
+   };
+
+  const obj= new customPromise((res,rej)=>{
+     res("hey, promise implemented!");
+   });
+   window.custom=obj;
+
+   console.log('obj',obj)
+//    obj.then((result)=>{
+//     console.log("result->", result);
+//    })
