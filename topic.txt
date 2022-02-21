@@ -1,0 +1,63 @@
+1-closure
+2-event loop-{
+    1-internal working
+    2-micro vs macro task
+}
+3-setTimeout and setInterval() working
+4-var vs let
+5-Function
+{
+    1-expression vs statement
+    2-arrow vs normal function
+    3-normal function vs arrow function
+    
+
+}
+
+6-this{
+
+    1-this in arrow function vs normal function
+    2-this with call, bind
+}
+
+7-Class{
+1-Class is just sytactical sugar on top(internally it is functional constructor)
+2-working of new ()
+3-how inheritance of class works in js
+class a extends b{}
+//internal 
+function a{
+    b.call(this);
+}
+new a();
+4-arrow function in class are assined to obj not object prototype
+
+} 
+8-{
+1-Prototype vs __proto__
+2-what is constructor,and where is points top
+obj.constructor===Object//true , how it is true
+
+3-functiona  fn().constructor===Function
+
+4-Object.__proto__===Function
+{
+Object.__proto__===Function.prototype
+//true
+Object.constructor===Function
+//true}->understand how it is working
+
+
+}
+
+
+9-{}==={} //false 
+10-hoisting in js{
+
+    1-let vs const vs var
+    2-functonal hoisting
+}
+
+
+
+
