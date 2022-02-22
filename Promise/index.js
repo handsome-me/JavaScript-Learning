@@ -10,30 +10,39 @@ const REJECTED="REJECTED";
       refer_to_then=null;
        val=null;
        status=PENDING;
-
+      
      //promise(//promise_callback->// (res,rej)=>{})
      constructor(promise_callback){
-       
-        promise_callback(this.resolve);
+        
+         const resolve=(val)=>{
+           
+            this.status=FULLFILLED;
+            this.val=val;
+             
+          };
+         
+     
+          promise_callback(resolve);
       
-        return this;
 
      }
-     resolve=(val)=>{
-       this.status=FULLFILLED;
-       this.val=val;
-        
-     };
-     reject(){
-
-     } 
+       
      
      then=(callBack)=>{
             
           const res=callBack(this.val);
-          this.val=res;
+          if(res)
+          if(res.__proto__===Promise.prototype){
+               
+               
+             return res; 
+          }
+          
           this.status=FULLFILLED
           
+         
+          this.result=res;
+           
           return this;
 
         }
@@ -45,8 +54,8 @@ const REJECTED="REJECTED";
      res("hey, promise implemented!");
    });
    window.custom=obj;
-
-   console.log('obj',obj)
+    
+   //console.log('obj',obj.then((r)=>r))
 //    obj.then((result)=>{
 //     console.log("result->", result);
 //    })
