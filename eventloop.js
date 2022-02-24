@@ -1,3 +1,6 @@
+let name="Meghraj";
+var name2="varName_Meghraj";
+
 function fn(){
 
     console.clear()

@@ -1,6 +1,6 @@
 
-console.log("Started implementing promise");
-
+console.log("Started implementing promise",name2,name);
+//debugger;
 const PENDING="PENDING";
 const FULLFILLED="FULLFILLED";
 const REJECTED="REJECTED";
